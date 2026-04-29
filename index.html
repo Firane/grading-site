@@ -39,6 +39,7 @@
       background: var(--bg);
       color: var(--label);
       min-height: 100vh;
+      overflow-x: clip;
     }
 
     /* ─── Nav ─── */
@@ -453,9 +454,14 @@
 
     /* Small phone */
     @media (max-width: 380px) {
-      .nav-pills { gap: 4px; }
-      .nav-pill { padding: 4px 9px; font-size: 10px; }
       .photo-grid { gap: 6px; }
+    }
+
+    /* Hide "Grade " text on mobile, keep only the letter */
+    @media (max-width: 600px) {
+      .pill-word { display: none; }
+      .nav-pills { gap: 6px; }
+      .nav-pill { padding: 5px 13px; font-size: 12px; }
     }
 
     /* Touch devices: always show overlay label (no hover) */
@@ -478,9 +484,9 @@
     <span class="broker">Broker</span><span class="tech">tech</span>
   </a>
   <div class="nav-pills">
-    <a class="nav-pill a" href="#grade-a">Grade A</a>
-    <a class="nav-pill b" href="#grade-b">Grade B</a>
-    <a class="nav-pill c" href="#grade-c">Grade C</a>
+    <a class="nav-pill a" href="#grade-a"><span class="pill-word">Grade </span>A</a>
+    <a class="nav-pill b" href="#grade-b"><span class="pill-word">Grade </span>B</a>
+    <a class="nav-pill c" href="#grade-c"><span class="pill-word">Grade </span>C</a>
   </div>
 </nav>
 
