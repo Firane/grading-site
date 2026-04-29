@@ -210,8 +210,8 @@
     .photo-card:hover .photo-img-wrap img { transform: scale(1.03); }
 
     .photo-placeholder {
-      width: 100%;
-      height: 100%;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -221,8 +221,6 @@
       border: 1.5px dashed var(--sep);
       border-radius: 6px;
       margin: 8px;
-      width: calc(100% - 16px);
-      height: calc(100% - 16px);
     }
     .photo-placeholder svg { opacity: 0.3; }
     .photo-placeholder span {
@@ -337,7 +335,6 @@
     @media (max-width: 600px) {
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
       nav { padding: 0 16px; }
-      .nav-title { font-size: 12px; }
     }
   </style>
 </head>
@@ -361,25 +358,25 @@
     <div class="grade-header a">
       <div class="grade-letter">A</div>
       <div class="grade-info">
-        <h2>Grade A — État neuf</h2>
-        <p>Aucun défaut cosmétique. Appareil comme neuf.</p>
+        <h2 data-i18n="grade-a-title">Grade A — État neuf</h2>
+        <p data-i18n="grade-a-desc">Aucun défaut cosmétique. Appareil comme neuf.</p>
       </div>
     </div>
 
     <div class="model-block">
       <div class="model-label"><span>A2251</span></div>
       <div class="photo-grid">
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo1.jpg', 'A2251 · Grade A · Vue ouverte', 0)">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo1.jpg" alt="Vue ouverte" loading="lazy"></div>
-          <div class="photo-label">Vue ouverte</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo1.jpg', 'A2251', 'a', 'label-open')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo1.jpg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-open">Vue ouverte</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo2.jpg', 'A2251 · Grade A · Écran', 1)">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo2.jpg" alt="Écran" loading="lazy"></div>
-          <div class="photo-label">Écran</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo2.jpg', 'A2251', 'a', 'label-screen')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo2.jpg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-screen">Écran</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo3.jpg', 'A2251 · Grade A · Capot supérieur', 2)">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo3.jpg" alt="Capot supérieur" loading="lazy"></div>
-          <div class="photo-label">Capot supérieur</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-a/photo3.jpg', 'A2251', 'a', 'label-top')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-a/photo3.jpg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-top">Capot supérieur</div>
         </div>
       </div>
     </div>
@@ -388,16 +385,16 @@
       <div class="model-label"><span>A2141</span></div>
       <div class="photo-grid">
         <div class="photo-card placeholder-card">
-          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div>
-          <div class="photo-label">Vue ouverte</div>
+          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div>
+          <div class="photo-label" data-i18n="label-open">Vue ouverte</div>
         </div>
         <div class="photo-card placeholder-card">
-          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div>
-          <div class="photo-label">Écran</div>
+          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div>
+          <div class="photo-label" data-i18n="label-screen">Écran</div>
         </div>
         <div class="photo-card placeholder-card">
-          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div>
-          <div class="photo-label">Capot supérieur</div>
+          <div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div>
+          <div class="photo-label" data-i18n="label-top">Capot supérieur</div>
         </div>
       </div>
     </div>
@@ -408,25 +405,25 @@
     <div class="grade-header b">
       <div class="grade-letter">B</div>
       <div class="grade-info">
-        <h2>Grade B — Usures cosmétiques</h2>
-        <p>Traces d'usure cosmétique visibles (rayures légères, marques d'utilisation).</p>
+        <h2 data-i18n="grade-b-title">Grade B — Usures cosmétiques</h2>
+        <p data-i18n="grade-b-desc">Traces d'usure cosmétique visibles (rayures légères, marques d'utilisation).</p>
       </div>
     </div>
 
     <div class="model-block">
       <div class="model-label"><span>A2251</span></div>
       <div class="photo-grid">
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1504.jpeg', 'A2251 · Grade B · Vue ouverte')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1504.jpeg" alt="Vue ouverte" loading="lazy"></div>
-          <div class="photo-label">Vue ouverte</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1504.jpeg', 'A2251', 'b', 'label-open')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1504.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-open">Vue ouverte</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1508.jpeg', 'A2251 · Grade B · Écran')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1508.jpeg" alt="Écran" loading="lazy"></div>
-          <div class="photo-label">Écran</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1508.jpeg', 'A2251', 'b', 'label-screen')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1508.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-screen">Écran</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1509.jpeg', 'A2251 · Grade B · Capot supérieur')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1509.jpeg" alt="Capot supérieur" loading="lazy"></div>
-          <div class="photo-label">Capot supérieur</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-b/IMG_1509.jpeg', 'A2251', 'b', 'label-top')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-b/IMG_1509.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-top">Capot supérieur</div>
         </div>
       </div>
     </div>
@@ -434,9 +431,9 @@
     <div class="model-block">
       <div class="model-label"><span>A2141</span></div>
       <div class="photo-grid">
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Vue ouverte</div></div>
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Écran</div></div>
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Capot supérieur</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-open">Vue ouverte</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-screen">Écran</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-top">Capot supérieur</div></div>
       </div>
     </div>
   </section>
@@ -446,25 +443,25 @@
     <div class="grade-header c">
       <div class="grade-letter">C</div>
       <div class="grade-info">
-        <h2>Grade C — Chocs / Ports défaillants</h2>
-        <p>Chocs, déformations ou un port potentiellement défaillant.</p>
+        <h2 data-i18n="grade-c-title">Grade C — Chocs / Ports défaillants</h2>
+        <p data-i18n="grade-c-desc">Chocs, déformations ou un port potentiellement défaillant.</p>
       </div>
     </div>
 
     <div class="model-block">
       <div class="model-label"><span>A2251</span></div>
       <div class="photo-grid">
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1510.jpeg', 'A2251 · Grade C · Vue ouverte')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1510.jpeg" alt="Vue ouverte" loading="lazy"></div>
-          <div class="photo-label">Vue ouverte</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1510.jpeg', 'A2251', 'c', 'label-open')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1510.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-open">Vue ouverte</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1513.jpeg', 'A2251 · Grade C · Écran')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1513.jpeg" alt="Écran" loading="lazy"></div>
-          <div class="photo-label">Écran</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1513.jpeg', 'A2251', 'c', 'label-screen')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1513.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-screen">Écran</div>
         </div>
-        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1514.jpeg', 'A2251 · Grade C · Capot supérieur')">
-          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1514.jpeg" alt="Capot supérieur" loading="lazy"></div>
-          <div class="photo-label">Capot supérieur</div>
+        <div class="photo-card" onclick="openLightbox('images/a2251/grade-c/IMG_1514.jpeg', 'A2251', 'c', 'label-top')">
+          <div class="photo-img-wrap"><img src="images/a2251/grade-c/IMG_1514.jpeg" alt="" loading="lazy"></div>
+          <div class="photo-label" data-i18n="label-top">Capot supérieur</div>
         </div>
       </div>
     </div>
@@ -472,43 +469,98 @@
     <div class="model-block">
       <div class="model-label"><span>A2141</span></div>
       <div class="photo-grid">
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Vue ouverte</div></div>
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Écran</div></div>
-        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo à venir</span></div></div><div class="photo-label">Capot supérieur</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-open">Vue ouverte</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-screen">Écran</div></div>
+        <div class="photo-card placeholder-card"><div class="photo-img-wrap"><div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="placeholder">Photo à venir</span></div></div><div class="photo-label" data-i18n="label-top">Capot supérieur</div></div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>Guide de référence grade — MacBook Pro A2251 · A2141</footer>
+<footer data-i18n="footer">Guide de référence grade — MacBook Pro A2251 · A2141</footer>
 
 <!-- ── Lightbox ── -->
 <div id="lightbox" role="dialog" aria-modal="true">
-  <button id="lb-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
-  <button class="lb-nav" id="lb-prev" onclick="lbNav(-1)" aria-label="Précédent">‹</button>
+  <button id="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav" id="lb-prev" onclick="lbNav(-1)">‹</button>
   <div class="lb-inner">
     <img id="lb-img" src="" alt="">
     <div id="lb-caption"></div>
   </div>
-  <button class="lb-nav" id="lb-next" onclick="lbNav(1)" aria-label="Suivant">›</button>
+  <button class="lb-nav" id="lb-next" onclick="lbNav(1)">›</button>
 </div>
 
 <script>
-  // Build data array from card onclick attributes (before any override)
+  // ── Translations ──
+  const i18n = {
+    fr: {
+      title:          'Guide de référence grade — MacBook Pro',
+      'grade-a-title':'Grade A — État neuf',
+      'grade-a-desc': 'Aucun défaut cosmétique. Appareil comme neuf.',
+      'grade-a-name': 'Grade A',
+      'grade-b-title':'Grade B — Usures cosmétiques',
+      'grade-b-desc': 'Traces d\'usure cosmétique visibles (rayures légères, marques d\'utilisation).',
+      'grade-b-name': 'Grade B',
+      'grade-c-title':'Grade C — Chocs / Ports défaillants',
+      'grade-c-desc': 'Chocs, déformations ou un port potentiellement défaillant.',
+      'grade-c-name': 'Grade C',
+      'label-open':   'Vue ouverte',
+      'label-screen': 'Écran',
+      'label-top':    'Capot supérieur',
+      'placeholder':  'Photo à venir',
+      'footer':       'Guide de référence grade — MacBook Pro A2251 · A2141',
+    },
+    en: {
+      title:          'Grading Reference Guide — MacBook Pro',
+      'grade-a-title':'Grade A — Like New',
+      'grade-a-desc': 'No cosmetic defects. Device in like-new condition.',
+      'grade-a-name': 'Grade A',
+      'grade-b-title':'Grade B — Cosmetic Wear',
+      'grade-b-desc': 'Visible cosmetic wear (light scratches, signs of use).',
+      'grade-b-name': 'Grade B',
+      'grade-c-title':'Grade C — Damage / Faulty Ports',
+      'grade-c-desc': 'Dents, deformations or a potentially faulty port.',
+      'grade-c-name': 'Grade C',
+      'label-open':   'Open view',
+      'label-screen': 'Screen',
+      'label-top':    'Top cover',
+      'placeholder':  'Coming soon',
+      'footer':       'Grading Reference Guide — MacBook Pro A2251 · A2141',
+    }
+  };
+
+  // Detect language: English if browser lang starts with 'en', else French
+  const lang = (navigator.language || navigator.userLanguage || 'fr').startsWith('en') ? 'en' : 'fr';
+  const t = i18n[lang];
+
+  // Apply translations to all data-i18n elements
+  document.documentElement.lang = lang;
+  document.title = t.title;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // ── Lightbox ──
+  // Build card data from onclick attributes
   const cards = Array.from(document.querySelectorAll('.photo-card:not(.placeholder-card)'));
   const cardData = cards.map(card => {
-    const m = card.getAttribute('onclick').match(/openLightbox\('([^']+)',\s*'([^']+)'/);
-    return m ? { src: m[1], caption: m[2] } : null;
+    const m = card.getAttribute('onclick').match(/openLightbox\('([^']+)',\s*'([^']+)',\s*'([^']+)',\s*'([^']+)'\)/);
+    return m ? { src: m[1], model: m[2], grade: m[3], labelKey: m[4] } : null;
   }).filter(Boolean);
 
   let currentIndex = 0;
 
-  function openLightbox(src, caption) {
+  function buildCaption(d) {
+    return `${d.model} · ${t[`grade-${d.grade}-name`]} · ${t[d.labelKey]}`;
+  }
+
+  function openLightbox(src, model, grade, labelKey) {
     currentIndex = cardData.findIndex(d => d.src === src);
     if (currentIndex === -1) currentIndex = 0;
     document.getElementById('lb-img').src = src;
-    document.getElementById('lb-caption').textContent = caption;
+    document.getElementById('lb-caption').textContent = buildCaption(cardData[currentIndex]);
     document.getElementById('lightbox').classList.add('open');
     updateNavBtns();
     document.body.style.overflow = 'hidden';
@@ -522,7 +574,7 @@
   function lbNav(dir) {
     currentIndex = Math.max(0, Math.min(cardData.length - 1, currentIndex + dir));
     document.getElementById('lb-img').src = cardData[currentIndex].src;
-    document.getElementById('lb-caption').textContent = cardData[currentIndex].caption;
+    document.getElementById('lb-caption').textContent = buildCaption(cardData[currentIndex]);
     updateNavBtns();
   }
 
