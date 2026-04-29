@@ -762,8 +762,12 @@
     showIndicator();
   }, { passive: false });
 
-  // Double-click toggle
-  lbImg.addEventListener('dblclick', () => {
+  // Single-click toggle (suppressed if drag occurred)
+  let didDrag = false;
+  lbImg.addEventListener('mousedown', () => { didDrag = false; });
+  document.addEventListener('mousemove', () => { if (isDragging) didDrag = true; });
+  lbImg.addEventListener('click', () => {
+    if (didDrag) return;
     scale = scale > 1 ? 1 : 2;
     if (scale === 1) { panX = 0; panY = 0; }
     applyZoom(true);
