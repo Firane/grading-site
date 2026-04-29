@@ -419,15 +419,55 @@
     }
 
     /* ─── Responsive ─── */
+
+    /* Tablet */
     @media (max-width: 860px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 56px 24px 48px; }
       .grade-section { grid-template-columns: 1fr; }
       .grade-meta { border-right: none; border-bottom: 1px solid var(--sep); padding: 40px 24px 32px; }
       .grade-content { padding: 32px 24px 40px; }
-      nav { padding: 0 20px; }
-      .hero { padding: 56px 24px 48px; }
     }
+
+    /* Large phone */
+    @media (max-width: 600px) {
+      nav { height: 48px; }
+      .nav-pill { padding: 4px 11px; font-size: 11px; }
+      .hero { padding: 40px 20px 36px; }
+      .hero-eyebrow { margin-bottom: 10px; }
+      .grade-meta { padding: 28px 20px 24px; }
+      .grade-watermark { font-size: 160px; top: -16px; left: -8px; }
+      .grade-title { font-size: 22px; }
+      .grade-content { padding: 20px 20px 28px; }
+      .model-block { margin-bottom: 24px; }
+      footer { padding: 20px; }
+      .lb-nav { width: 40px; height: 40px; font-size: 18px; }
+      #lb-prev { left: 10px; }
+      #lb-next { right: 10px; }
+    }
+
+    /* Phone */
     @media (max-width: 540px) {
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    }
+
+    /* Small phone */
+    @media (max-width: 380px) {
+      .nav-pills { gap: 4px; }
+      .nav-pill { padding: 4px 9px; font-size: 10px; }
+      .photo-grid { gap: 6px; }
+    }
+
+    /* Touch devices: always show overlay label (no hover) */
+    @media (hover: none) {
+      .photo-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,.42) 0%, transparent 52%);
+      }
+      .overlay-label { transform: translateY(0); }
+      .photo-card:hover { transform: none; box-shadow: 0 1px 4px rgba(0,0,0,.07), 0 4px 18px rgba(0,0,0,.04); }
+      .photo-card:hover img { transform: none; }
+      .photo-card:active { transform: scale(0.97); transition: transform .12s ease; }
     }
   </style>
 </head>
@@ -771,6 +811,18 @@
   }, { passive: false });
 
   document.getElementById('lightbox').addEventListener('touchend', () => { lastPinchDist = null; });
+
+  // Swipe to navigate (single finger, no zoom active)
+  let swipeStartX = null;
+  document.getElementById('lightbox').addEventListener('touchstart', e => {
+    if (e.touches.length === 1) swipeStartX = e.touches[0].clientX;
+  }, { passive: true });
+  document.getElementById('lightbox').addEventListener('touchend', e => {
+    if (swipeStartX === null || scale > 1) { swipeStartX = null; return; }
+    const dx = e.changedTouches[0].clientX - swipeStartX;
+    if (Math.abs(dx) > 48) lbNav(dx < 0 ? 1 : -1);
+    swipeStartX = null;
+  }, { passive: true });
 
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lightbox').classList.contains('open')) return;
