@@ -637,7 +637,7 @@
       'grade-c-title':'Acceptable',
       'grade-c-desc': 'Peut présenter des chocs ou déformations. Un port peut être non fonctionnel.',
       'grade-c-name': 'Grade C',
-      'label-open':   'Vue ouverte',
+      'label-open':   'Ensemble',
       'label-screen': 'Écran',
       'label-top':    'Capot supérieur',
       'placeholder':  'Photo à venir',
@@ -658,7 +658,7 @@
       'grade-c-title':'Acceptable',
       'grade-c-desc': 'Poor cosmetic condition; noticeable damage, minor breakage, or slight functional issues.',
       'grade-c-name': 'Grade C',
-      'label-open':   'Open view',
+      'label-open':   'Full view',
       'label-screen': 'Screen',
       'label-top':    'Top cover',
       'placeholder':  'Coming soon',
@@ -685,7 +685,7 @@
   document.querySelectorAll('.grade-section').forEach(s => io.observe(s));
 
   // ── Photo loading ──
-  const labelKeys = ['label-open', 'label-screen', 'label-top'];
+  const labelKeys = ['label-open', 'label-top', 'label-screen'];
   let cardData = [];
 
   function makePhotoCard(src, model, grade, labelKey) {
