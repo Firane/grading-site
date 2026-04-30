@@ -189,16 +189,7 @@
     .b .badge-dot { background: var(--b-accent); }
     .c .badge-dot { background: var(--c-accent); }
 
-    .grade-title {
-      font-family: var(--serif);
-      font-style: normal;
-      font-weight: 300;
-      font-size: 27px;
-      line-height: 1.2;
-      letter-spacing: -.02em;
-      color: var(--label);
-      margin-bottom: 14px;
-    }
+    .grade-title { display: none; }
 
     .grade-desc {
       font-size: 13.5px;
@@ -411,6 +402,18 @@
     #lb-next { right: 24px; }
     .lb-nav:disabled { opacity: .15; cursor: default; }
 
+    /* ─── Info bar ─── */
+    .info-bar {
+      text-align: center;
+      padding: 12px 24px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--label3);
+      background: var(--surface);
+      border-bottom: 1px solid var(--sep);
+      letter-spacing: .01em;
+    }
+
     /* ─── Footer ─── */
     footer {
       text-align: center;
@@ -495,6 +498,10 @@
   <p class="hero-eyebrow">MacBook Pro · A2251 · A2141</p>
   <h1 class="hero-title" data-i18n="hero-title">Guide de référence</h1>
   <p class="hero-sub" data-i18n="hero-sub">Évaluation cosmétique et technique</p>
+</div>
+
+<div class="info-bar">
+  <span data-i18n="info-bar">Prix EXW · Fourni sans adaptateur secteur.</span>
 </div>
 
 <!-- ── GRADE A ── -->
@@ -633,6 +640,7 @@
       'label-screen': 'Écran',
       'label-top':    'Capot supérieur',
       'placeholder':  'Photo à venir',
+      'info-bar':     'Prix EXW · Fourni sans adaptateur secteur.',
       'footer':       'Guide de référence grade — MacBook Pro A2251 · A2141',
     },
     en: {
@@ -640,18 +648,19 @@
       'hero-title':   'Grade Guide',
       'hero-sub':     'What each grade means',
       'grade-a-title':'Excellent',
-      'grade-a-desc': 'Minimal to no visible cosmetic wear.',
+      'grade-a-desc': 'Excellent cosmetic condition and perfect working order.',
       'grade-a-name': 'Grade A',
       'grade-b-title':'Good',
-      'grade-b-desc': 'Minor cosmetic wear from regular use.',
+      'grade-b-desc': 'Good cosmetic condition; visible signs of use or wear, or minor marks on the screen.',
       'grade-b-name': 'Grade B',
       'grade-c-title':'Acceptable',
-      'grade-c-desc': 'May show dents or deformations. A port may be non-functional.',
+      'grade-c-desc': 'Poor cosmetic condition; noticeable damage, minor breakage, or slight functional issues.',
       'grade-c-name': 'Grade C',
       'label-open':   'Open view',
       'label-screen': 'Screen',
       'label-top':    'Top cover',
       'placeholder':  'Coming soon',
+      'info-bar':     'Price EXW · Supplied without power adapter.',
       'footer':       'Grading Reference Guide — MacBook Pro A2251 · A2141',
     }
   };
