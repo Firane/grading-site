@@ -422,14 +422,37 @@
 
     /* ─── Info bar ─── */
     .info-bar {
-      text-align: center;
-      padding: 12px 24px;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--label3);
-      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 13px 24px;
+      background: var(--bg);
       border-bottom: 1px solid var(--sep);
-      letter-spacing: .01em;
+    }
+
+    .info-chip {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--sep);
+      border-radius: 6px;
+      padding: 4px 10px 4.5px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--label2);
+      letter-spacing: .025em;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+      white-space: nowrap;
+    }
+
+    .info-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--label3);
+      opacity: .35;
+      flex-shrink: 0;
     }
 
     /* ─── Footer ─── */
@@ -519,7 +542,9 @@
 </div>
 
 <div class="info-bar">
-  <span data-i18n="info-bar">Prix EXW · Fourni sans adaptateur secteur.</span>
+  <span class="info-chip" data-i18n="info-price">Prix EXW</span>
+  <span class="info-sep" aria-hidden="true"></span>
+  <span class="info-chip" data-i18n="info-adapter">Fourni sans adaptateur secteur</span>
 </div>
 
 <!-- ── GRADE A ── -->
@@ -616,7 +641,8 @@
       'label-screen': 'Écran',
       'label-top':    'Capot supérieur',
       'placeholder':  'Photo à venir',
-      'info-bar':     'Prix EXW · Fourni sans adaptateur secteur.',
+      'info-price':   'Prix EXW',
+      'info-adapter': 'Fourni sans adaptateur secteur',
       'footer':       'Guide de référence grade — MacBook Pro A2251 · A2141',
     },
     en: {
@@ -636,7 +662,8 @@
       'label-screen': 'Screen',
       'label-top':    'Top cover',
       'placeholder':  'Coming soon',
-      'info-bar':     'Price EXW · Supplied without power adapter.',
+      'info-price':   'Price EXW',
+      'info-adapter': 'Supplied without power adapter',
       'footer':       'Grading Reference Guide — MacBook Pro A2251 · A2141',
     }
   };
