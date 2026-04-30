@@ -87,7 +87,29 @@
     .nav-logo .broker { color: #1D1D1F; }
     .nav-logo .tech   { color: #54c41d; }
 
+    .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-pills { display: flex; gap: 6px; }
+
+    .lang-toggle {
+      display: flex;
+      border: 1px solid var(--sep);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .lang-opt {
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      color: var(--label3);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      font-family: var(--font);
+    }
+    .lang-opt.active { background: var(--label); color: #fff; }
+    .lang-opt:not(.active):hover { background: var(--sep); color: var(--label2); }
     .nav-pill {
       padding: 5px 16px;
       border-radius: 20px;
@@ -527,10 +549,16 @@
   <a class="nav-logo" href="#">
     <span class="broker">Broker</span><span class="tech">Tech</span>
   </a>
-  <div class="nav-pills">
-    <a class="nav-pill a" href="#grade-a"><span class="pill-word">Grade </span>A</a>
-    <a class="nav-pill b" href="#grade-b"><span class="pill-word">Grade </span>B</a>
-    <a class="nav-pill c" href="#grade-c"><span class="pill-word">Grade </span>C</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-opt" data-lang="en">EN</button>
+      <button class="lang-opt" data-lang="fr">FR</button>
+    </div>
+    <div class="nav-pills">
+      <a class="nav-pill a" href="#grade-a"><span class="pill-word">Grade </span>A</a>
+      <a class="nav-pill b" href="#grade-b"><span class="pill-word">Grade </span>B</a>
+      <a class="nav-pill c" href="#grade-c"><span class="pill-word">Grade </span>C</a>
+    </div>
   </div>
 </nav>
 
@@ -667,14 +695,28 @@
     }
   };
 
-  const lang = (navigator.language || 'fr').startsWith('en') ? 'en' : 'fr';
-  const t = i18n[lang];
+  let lang = localStorage.getItem('lang') || 'en';
+  let t = i18n[lang];
 
-  document.documentElement.lang = lang;
-  document.title = t.title;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (t[k] !== undefined) el.textContent = t[k];
+  function applyLang(newLang) {
+    lang = newLang;
+    t = i18n[lang];
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  applyLang(lang);
+
+  document.querySelectorAll('.lang-opt').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
   // ── Scroll reveal ──
