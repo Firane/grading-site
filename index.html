@@ -59,33 +59,9 @@
       border-bottom: 1px solid var(--sep);
     }
 
-    @keyframes pulseDot {
-      0%,100% { opacity:1; box-shadow:0 0 6px #54c41d; }
-      50%      { opacity:.4; box-shadow:0 0 16px #54c41d; }
-    }
-    .nav-logo {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0;
-      font-family: 'Geist', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .nav-logo::after {
-      content: '';
-      width: 6px; height: 6px;
-      background: #54c41d;
-      border-radius: 50%;
-      align-self: center;
-      margin-left: 4px;
-      box-shadow: 0 0 12px #54c41d;
-      animation: pulseDot 2.4s ease-in-out infinite;
-    }
-    .nav-logo .broker { color: #1D1D1F; }
-    .nav-logo .tech   { color: #54c41d; }
+    .nav-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 28px; width: auto; display: block; }
+    .nav-symbol { height: 22px; width: auto; display: block; opacity: .85; }
 
     .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-pills { display: flex; gap: 6px; }
@@ -547,17 +523,18 @@
 
 <nav>
   <a class="nav-logo" href="#">
-    <span class="broker">Broker</span><span class="tech">Tech</span>
+    <img src="images/logo/logo-default.svg" alt="BrokerTech">
   </a>
   <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="lang-opt" data-lang="en">🇬🇧 EN</button>
-      <button class="lang-opt" data-lang="fr">🇫🇷 FR</button>
-    </div>
     <div class="nav-pills">
       <a class="nav-pill a" href="#grade-a"><span class="pill-word">Grade </span>A</a>
       <a class="nav-pill b" href="#grade-b"><span class="pill-word">Grade </span>B</a>
       <a class="nav-pill c" href="#grade-c"><span class="pill-word">Grade </span>C</a>
+    </div>
+    <img src="images/logo/symbol-default.svg" alt="" class="nav-symbol">
+    <div class="lang-toggle">
+      <button class="lang-opt" data-lang="en">🇬🇧 EN</button>
+      <button class="lang-opt" data-lang="fr">🇫🇷 FR</button>
     </div>
   </div>
 </nav>
