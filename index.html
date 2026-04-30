@@ -198,7 +198,7 @@
     }
 
     /* Right column */
-    .grade-content { padding: 48px 48px 56px; }
+    .grade-content { padding: 48px 48px 56px; min-width: 0; }
 
     .model-block { margin-bottom: 36px; }
     .model-block:last-child { margin-bottom: 0; }
@@ -228,7 +228,10 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
+      min-width: 0;
     }
+
+    .photo-card { min-width: 0; }
 
     .photo-card {
       position: relative;
